@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+    <student>
+        <Year>18</Year>
+        <Months>11</Months>
+        <Days>26</Days>
+        <sum>17</sum>
+        <isDigit>true</isDigit>
+    </student>
+</students>

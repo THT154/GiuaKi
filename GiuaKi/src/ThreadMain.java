@@ -47,21 +47,13 @@ public class ThreadMain extends Thread {
 
 	}
 
-	public String encodeAge(int years, int months, int days) {
-		return String.valueOf(years) + String.valueOf(months) + String.valueOf(days);
-	}
-
 	public void Thread3() {
-		// Lấy ngày sinh của sinh viên
 		LocalDate dob = student.getDateOfBirth();
 
-		// Tính tổng các chữ số trong ngày tháng năm sinh
 		sumOfDigits = calculateSumOfDigits(dob.toString().replace("-", ""));
 
-		// Kiểm tra xem tổng có phải số nguyên tố hay không
 		boolean isPrime = isPrime(sumOfDigits);
 
-		// In ra kết quả kiểm tra
 		System.out.println("-----------------------------------");
 		System.out.println("Tổng các chữ số trong ngày tháng năm sinh của " + student.getName() + ": " + sumOfDigits);
 		if (isPrime == true) {
@@ -73,27 +65,7 @@ public class ThreadMain extends Thread {
 
 	}
 
-	// Phương thức tính tổng các chữ số trong một chuỗi số
-	private int calculateSumOfDigits(String number) {
-		int sum = 0;
-		for (int i = 0; i < number.length(); i++) {
-			sum += Character.getNumericValue(number.charAt(i));
-		}
-		return sum;
-	}
-
-	// Phương thức kiểm tra xem một số có phải số nguyên tố hay không
-	private boolean isPrime(int number) {
-		if (number <= 1) {
-			return false;
-		}
-		for (int i = 2; i <= Math.sqrt(number); i++) {
-			if (number % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+	
 
 	public void writeStudentsToXML(List<Student> students, String filename) {
 		try {
@@ -146,6 +118,30 @@ public class ThreadMain extends Thread {
 		} catch (ParserConfigurationException | TransformerException ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	private int calculateSumOfDigits(String number) {
+		int sum = 0;
+		for (int i = 0; i < number.length(); i++) {
+			sum += Character.getNumericValue(number.charAt(i));
+		}
+		return sum;
+	}
+
+	private boolean isPrime(int number) {
+		if (number <= 1) {
+			return false;
+		}
+		for (int i = 2; i <= Math.sqrt(number); i++) {
+			if (number % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private String encodeAge(int years, int months, int days) {
+		return String.valueOf(years) + String.valueOf(months) + String.valueOf(days);
 	}
 
 }

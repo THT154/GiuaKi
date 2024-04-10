@@ -55,7 +55,6 @@ public class Thread1 {
 			thread.Thread3();
 			
 			thread.writeStudentsToXML(danhsach, "src\\kq.xml");
-//			System.out.println(student);
 		}
 		
 		

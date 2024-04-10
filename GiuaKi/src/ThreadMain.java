@@ -114,7 +114,6 @@ public class ThreadMain extends Thread {
 			StreamResult result = new StreamResult(filename);
 			transformer.transform(source, result);
 
-			System.out.println("Dữ liệu đã được ghi vào tệp XML thành công.");
 		} catch (ParserConfigurationException | TransformerException ex) {
 			ex.printStackTrace();
 		}

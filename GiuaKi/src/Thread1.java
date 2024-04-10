@@ -23,7 +23,7 @@ public class Thread1 {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse("src\\\\Student.xml");
+			Document doc = db.parse("GiuaKi/src/Student.xml");
 			Element element = doc.getDocumentElement();
 			
 			NodeList ID = element.getElementsByTagName("ID");
@@ -54,7 +54,7 @@ public class Thread1 {
 
 			thread.Thread3();
 			
-			thread.writeStudentsToXML(danhsach, "src\\kq.xml");
+			thread.writeStudentsToXML(danhsach, "GiuaKi/src/kq.xml");
 		}
 		
 		
